@@ -1,0 +1,17 @@
+.page {
+    width: 279mm;
+    min-height: 215mm;
+}
+.previewmap {
+	width: 239mm !important;
+    height: 175mm !important; /* .page height -40mm (20 off top/bottom) */
+}
+@page{
+	size: landscape;
+}
+@media print {
+    html, body {
+        width: 279mm;
+        height: 215mm;
+    }
+}
