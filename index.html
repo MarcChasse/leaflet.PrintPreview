@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Leaflet.PrintPreview DEMO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-rc.1/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link id="pp-main" rel="stylesheet" href="./leaflet.printpreview.css" disabled>
+    <link id="pp-ltr-land" rel="stylesheet" href="./leaflet.printpreview.letter.landscape.css" disabled>
+    <link id="pp-ltr-port" rel="stylesheet" href="./leaflet.printpreview.letter.portrait.css" disabled>
+    <style>html,body{margin:0;}#map_{width:100vw;height:100vh;}</style>
+</head>
+<body>
+    <div id="map_" ></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-rc.1/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="./leaflet.printpreview.js"></script>
+    <script>
+        osm = new L.TileLayer(
+            'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            {attribution: 'Map data &copy; OpenStreetMap contributors'}
+        );
+
+        var map = L.map('map_', {
+            center: [52.27,-113.81],
+            zoom: 12
+        });
+        map.addLayer(osm);
+
+        L.PrintPreview({
+            mapID: '#map_'
+        }).addTo(map);
+    </script>
+</body>
+</html>

@@ -12,13 +12,15 @@ The map can then be zoomed and panned to fit exactly what needs to be printed.
 2. Include PrintPreview javascript and css
 
     ```html
-    <link rel="stylesheet" type="text/css" href="https://rawgit.com/MarcChasse/leaflet.PrintPreview/master/leaflet.printpreview.css" disabled>
-    <link rel="stylesheet" type="text/css" href="https://rawgit.com/MarcChasse/leaflet.PrintPreview/master/leaflet.printpreview.letter.landscape.css" disabled>
-    <link rel="stylesheet" type="text/css" href="https://rawgit.com/MarcChasse/leaflet.PrintPreview/master/leaflet.printpreview.letter.portrait.css" disabled>
-    <script src="https://rawgit.com/MarcChasse/Leaflet.PrintPreview/master/leaflet.printpreview.js"></script>
+    <link id="pp-main" rel="stylesheet" href="./leaflet.printpreview.css" disabled>
+    <link id="pp-ltr-land" rel="stylesheet" href="./leaflet.printpreview.letter.landscape.css" disabled>
+    <link id="pp-ltr-port" rel="stylesheet" href="./leaflet.printpreview.letter.portrait.css" disabled>
+    <script src="./leaflet.printpreview.js"></script>
     ```
 3. Add the map control:
     ```javascript
+    //Assumes your id is #map. If you have a different id pass it to PrinPreview
+    //L.PrintPreview('#map_id').addTo(map);
     L.PrintPreview().addTo(map);
     ```
 ## Complete Example
