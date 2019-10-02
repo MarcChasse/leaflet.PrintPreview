@@ -6,13 +6,15 @@
     <title>Leaflet.PrintPreview DEMO</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-rc.1/leaflet.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-    <link id="pp-main" rel="stylesheet" href="./leaflet.printpreview.css" disabled>
-    <link id="pp-ltr-land" rel="stylesheet" href="./leaflet.printpreview.letter.landscape.css" disabled>
-    <link id="pp-ltr-port" rel="stylesheet" href="./leaflet.printpreview.letter.portrait.css" disabled>
+    <link id="pp-main" rel="stylesheet" href="./leaflet.printpreview.css">
+    <link id="pp-ltr-port" rel="stylesheet" href="./leaflet.printpreview.letter.portrait.css">
+    <link id="pp-ltr-land" rel="stylesheet" href="./leaflet.printpreview.letter.landscape.css">
     <style>html,body{margin:0;}#map_{width:100vw;height:100vh;}</style>
 </head>
 <body>
     <div id="map_" ></div>
+    <div id="hi" style="position: absolute; font-size: 40px; left: 200px; top: 200px; z-index: 99999">HI</div>
+    <div id="hello" style="position: absolute; font-size: 40px; left: 200px; top: 200px; z-index: 99999">HELLO</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-rc.1/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="./leaflet.printpreview.js"></script>
@@ -29,8 +31,10 @@
         map.addLayer(osm);
 
         L.PrintPreview({
-            mapID: '#map_'
+            mapID: '#map_',
+            toggle: ['#hi', '#hello']
         }).addTo(map);
+        $('#hello').hide();
     </script>
 </body>
 </html>

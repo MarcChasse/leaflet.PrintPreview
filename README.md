@@ -12,9 +12,9 @@ The map can then be zoomed and panned to fit exactly what needs to be printed.
 2. Include PrintPreview javascript and css
 
     ```html
-    <link id="pp-main" rel="stylesheet" href="./leaflet.printpreview.css" disabled>
-    <link id="pp-ltr-land" rel="stylesheet" href="./leaflet.printpreview.letter.landscape.css" disabled>
-    <link id="pp-ltr-port" rel="stylesheet" href="./leaflet.printpreview.letter.portrait.css" disabled>
+    <link id="pp-main" rel="stylesheet" href="./leaflet.printpreview.css">
+    <link id="pp-ltr-land" rel="stylesheet" href="./leaflet.printpreview.letter.landscape.css">
+    <link id="pp-ltr-port" rel="stylesheet" href="./leaflet.printpreview.letter.portrait.css">
     <script src="./leaflet.printpreview.js"></script>
     ```
 3. Add the map control:
@@ -64,4 +64,9 @@ Here is everything you need to get this up and running. Copy and past the follow
 Checkout the [DEMO](https://marcchasse.github.io/Leaflet.PrintPreview/)
 
 ## Options
-TBD.
+`mapID`: The id of the map. Default: `#map`
+`mainID`: The id of the main css file. Default: `#pp-main`
+`landscapeID`: The id of the landscape css file. Default: `#pp-ltr-land`
+`portaitID`: The id of the portrait css file. Default: `#pp-ltr-port`
+`toggle`: An array of id's or classes of items that should be toggled
+
