@@ -6,7 +6,7 @@
     var $portrait;
     //other globals
     var toggle;
-    
+    var scale;
     /**
      * Hides and shows objects when preview mode is triggered
      */
@@ -57,6 +57,9 @@
         toggleObjects();
             
         reCenterMap(center);
+        
+        //remove the scale
+        scale.remove();
     }
 
     L.Control.PrintPreview = L.Control.extend({
@@ -104,6 +107,9 @@
             toggleObjects();
             
             reCenterMap(center);
+            
+            //add the scale to map
+            scale = L.control.scale().addTo(map);
         }
     });
 
