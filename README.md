@@ -20,7 +20,7 @@ The map can then be zoomed and panned to fit exactly what needs to be printed.
 3. Add the map control:
     ```javascript
     //Assumes your id is #map. If you have a different id pass it to PrinPreview
-    //L.PrintPreview('#map_id').addTo(map);
+    //L.PrintPreview({mapID:'#map_id'}).addTo(map);
     L.PrintPreview().addTo(map);
     ```
 ## Complete Example
@@ -64,9 +64,17 @@ Here is everything you need to get this up and running. Copy and past the follow
 Checkout the [DEMO](https://marcchasse.github.io/Leaflet.PrintPreview/)
 
 ## Options
-`mapID`: The id of the map. Default: `#map`
-`mainID`: The id of the main css file. Default: `#pp-main`
-`landscapeID`: The id of the landscape css file. Default: `#pp-ltr-land`
-`portaitID`: The id of the portrait css file. Default: `#pp-ltr-port`
-`toggle`: An array of id's or classes of items that should be toggled
+`mapID`: The id of the map. Default: `#map`.
+
+`mainID`: The id of the main css file. Default: `#pp-main`.
+
+`landscapeID`: The id of the landscape css file. Default: `#pp-ltr-land`.
+
+`portaitID`: The id of the portrait css file. Default: `#pp-ltr-port`.
+
+`toggle`: An array of id's or classes of items that should be toggled when the preview is triggered.
+
+`callback`: A callback function after the preview has been created.
+
+`addScale`: Set to true to add a scale to the bottom left corner of map.
 

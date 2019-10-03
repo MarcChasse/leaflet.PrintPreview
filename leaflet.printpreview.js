@@ -7,6 +7,7 @@
     //other globals
     var toggle;
     var scale;
+    
     /**
      * Hides and shows objects when preview mode is triggered
      */
@@ -59,7 +60,8 @@
         reCenterMap(center);
         
         //remove the scale
-        scale.remove();
+        if(typeof scale !== undefined)
+            scale.remove();
     }
 
     L.Control.PrintPreview = L.Control.extend({
@@ -80,7 +82,7 @@
             return container;
         },
 
-        PrintPreview: function (options) {
+        PrintPreview: function () {
             'use strict';
             //set the map id but assume #map for backwards compatibility
             var center = map.getCenter();
@@ -109,7 +111,12 @@
             reCenterMap(center);
             
             //add the scale to map
-            scale = L.control.scale().addTo(map);
+            if(this.addScale)
+                scale = L.control.scale().addTo(map);
+            
+            //call callback if defined
+            if(typeof this.callback === 'function')
+                this.callback.call(this, $map, $portrait, $landscape);
         }
     });
 
